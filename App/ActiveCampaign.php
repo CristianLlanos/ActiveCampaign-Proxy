@@ -30,6 +30,9 @@ class ActiveCampaign
             ],
             [
                 'salesman'=>'victor'
+            ],
+            [
+                'salesman'=>'victoria'
             ]
         ];
         $this->new_salesmen_force=[
