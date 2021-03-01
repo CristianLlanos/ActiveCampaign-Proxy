@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d578c8e3-7041-4f24-9c05-5e0d6ac6190b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/App/next_meeting_calendar.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/ActiveCampaign.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/ActiveCampaign.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Connection.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,9 +12,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="ActiveCampaign-Proxy" />
@@ -42,16 +38,19 @@
   <component name="ProjectId" id="1dgtoQsGtxrrqZfg5xCFJXJwfx8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -89,6 +88,11 @@
       <workItem from="1594237020819" duration="646000" />
       <workItem from="1594833917526" duration="2315000" />
       <workItem from="1596499861718" duration="4740000" />
+      <workItem from="1614360066583" duration="1157000" />
+      <workItem from="1614361739881" duration="1268000" />
+      <workItem from="1614364140849" duration="864000" />
+      <workItem from="1614366907510" duration="605000" />
+      <workItem from="1614377286449" duration="10000" />
     </task>
     <servers />
   </component>
@@ -102,6 +106,6 @@
     </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
 </project>
