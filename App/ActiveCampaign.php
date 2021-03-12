@@ -2,6 +2,9 @@
 
 namespace App;
 
+use App\Repositories\LoadRepository;
+use App\Repositories\WorkerRepository;
+
 /**
  * @property Connection activeCampaign
  */
@@ -119,40 +122,28 @@ class ActiveCampaign
     }
     public function meetingScheuled()
     {
-        $current_meeting = file_get_contents('next_meeting_calendar.txt', true);
-        $pre=$current_meeting*1+1;
-        if ($pre==4){
-            $pre=0;
-        }
-        chmod('next_meeting_calendar.txt', '777');
-        file_put_contents('next_meeting_calendar.txt', $pre, FILE_USE_INCLUDE_PATH);
-        echo $this->salesmen_force[$pre*1]['salesman'];
+		header('Content-Type: text/plain');
+		header('Cache-Control: no-cache; no-store; no-transform');
+
+		$balancer = new LoadBalancer(
+			new LoadRepository()
+		);
+
+		$worker = new WorkerRepository();
+
+		$owner = $balancer->serve();
+
+		$worker->save($owner);
+
+		echo $owner;
     }
     public function getNextMeeting()
     {
-        $pre= file_get_contents('next_meeting_calendar.txt', true);
         header('Content-Type: application/json');
-        echo json_encode($this->salesmen_force[$pre*1]['salesman']);
 
-    }
-    public function newMeetingScheuled()
-    {
-        $current_meeting = file_get_contents('new_next_meeting_calendar.txt', true);
-//        $pre=0;
-        $pre=$current_meeting*1+1;
-        if ($pre==2){
-            $pre=0;
-        }
-        chmod('new_next_meeting_calendar.txt', '777');
-        file_put_contents('new_next_meeting_calendar.txt', $pre, FILE_USE_INCLUDE_PATH);
-        echo $this->new_salesmen_force[$pre*1]['salesman'];
-    }
-    public function newGetNextMeeting()
-    {
-        $pre= file_get_contents('new_next_meeting_calendar.txt', true);
-        header('Content-Type: application/json');
-        echo json_encode($this->new_salesmen_force[$pre*1]['salesman']);
-//        echo json_encode($this->new_salesmen_force[0]['salesman']);
+        $worker = new WorkerRepository();
+
+        echo json_encode($worker->get());
     }
 
     public function createReferral()

@@ -1,7 +1,10 @@
 {
+    "name": "talently/active-campaign",
+    "description": "Active Campaign Proxy",
     "require": {
         "guzzlehttp/guzzle": "^6.3",
-      "ext-json": "*"
+        "ext-json": "*",
+        "php": ">=7.2"
     },
     "autoload": {
         "psr-4": {
