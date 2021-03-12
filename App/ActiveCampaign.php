@@ -2,23 +2,26 @@
 
 namespace App;
 
-/**
- * @property Connection activeCampaign
- */
 class ActiveCampaign
 {
     /**
-     * @var \string[][]
+     * @var string[]
      */
     private $salesmen_force;
+
     /**
-     * @var \string[][]
+     * @var string[]
      */
     private $new_salesmen_force;
 
-    public function __construct()
+	/**
+	 * @var Connection
+	 */
+	private $activeCampaign;
+
+	public function __construct()
     {
-        $this->salesmen_force=[
+        $this->salesmen_force = [
             [
                 'salesman'=>'victoria'
             ],
@@ -32,7 +35,7 @@ class ActiveCampaign
                 'salesman'=>'victor'
             ]
         ];
-        $this->new_salesmen_force=[
+        $this->new_salesmen_force = [
             [
                 'salesman'=>'pablo'
             ],
@@ -135,26 +138,6 @@ class ActiveCampaign
         echo json_encode($this->salesmen_force[$pre*1]['salesman']);
 
     }
-    public function newMeetingScheuled()
-    {
-        $current_meeting = file_get_contents('new_next_meeting_calendar.txt', true);
-//        $pre=0;
-        $pre=$current_meeting*1+1;
-        if ($pre==2){
-            $pre=0;
-        }
-        chmod('new_next_meeting_calendar.txt', '777');
-        file_put_contents('new_next_meeting_calendar.txt', $pre, FILE_USE_INCLUDE_PATH);
-        echo $this->new_salesmen_force[$pre*1]['salesman'];
-    }
-    public function newGetNextMeeting()
-    {
-        $pre= file_get_contents('new_next_meeting_calendar.txt', true);
-        header('Content-Type: application/json');
-        echo json_encode($this->new_salesmen_force[$pre*1]['salesman']);
-//        echo json_encode($this->new_salesmen_force[0]['salesman']);
-    }
-
     public function createReferral()
     {
         $email = $_POST['contact']['fields']['referidos'];
